@@ -1,0 +1,3 @@
+com\example\usermanagement\dao\DatabaseConnection.class
+com\example\usermanagement\model\User.class
+com\example\usermanagement\dao\DatabaseTest.class
