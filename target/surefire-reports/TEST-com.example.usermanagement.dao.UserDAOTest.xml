@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.usermanagement.dao.UserDAOTest" time="1.403" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.usermanagement.dao.UserDAOTest" time="1.461" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.7.6-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\MO\AppData\Local\Temp\surefire17065268589270833578\surefirebooter-20250605162303311_3.jar C:\Users\MO\AppData\Local\Temp\surefire17065268589270833578 2025-06-05T16-23-03_193-jvmRun1 surefire-20250605162303311_1tmp surefire_0-20250605162303311_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\MO\AppData\Local\Temp\surefire10054119634433075101\surefirebooter-20250605165958361_3.jar C:\Users\MO\AppData\Local\Temp\surefire10054119634433075101 2025-06-05T16-59-58_244-jvmRun1 surefire-20250605165958361_1tmp surefire_0-20250605165958361_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="E:\Maven-UserManagement\UserManagement\target\test-classes;E:\Maven-UserManagement\UserManagement\target\classes;C:\Users\MO\.m2\repository\jakarta\servlet\jakarta.servlet-api\6.0.0\jakarta.servlet-api-6.0.0.jar;C:\Users\MO\.m2\repository\jakarta\servlet\jsp\jakarta.servlet.jsp-api\3.1.1\jakarta.servlet.jsp-api-3.1.1.jar;C:\Users\MO\.m2\repository\jakarta\servlet\jsp\jstl\jakarta.servlet.jsp.jstl-api\3.0.0\jakarta.servlet.jsp.jstl-api-3.0.0.jar;C:\Users\MO\.m2\repository\jakarta\el\jakarta.el-api\5.0.0\jakarta.el-api-5.0.0.jar;C:\Users\MO\.m2\repository\org\glassfish\web\jakarta.servlet.jsp.jstl\3.0.1\jakarta.servlet.jsp.jstl-3.0.1.jar;C:\Users\MO\.m2\repository\org\postgresql\postgresql\42.7.1\postgresql-42.7.1.jar;C:\Users\MO\.m2\repository\org\checkerframework\checker-qual\3.41.0\checker-qual-3.41.0.jar;C:\Users\MO\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.jar;C:\Users\MO\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\MO\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\MO\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\MO\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\MO\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.1\junit-jupiter-params-5.10.1.jar;C:\Users\MO\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.1\junit-jupiter-engine-5.10.1.jar;C:\Users\MO\.m2\repository\org\junit\platform\junit-platform-engine\1.10.1\junit-platform-engine-1.10.1.jar;C:\Users\MO\.m2\repository\org\mockito\mockito-junit-jupiter\5.8.0\mockito-junit-jupiter-5.8.0.jar;C:\Users\MO\.m2\repository\org\mockito\mockito-core\5.8.0\mockito-core-5.8.0.jar;C:\Users\MO\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\MO\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\MO\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\MO\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\MO\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\MO\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\MO\AppData\Local\Temp\surefire17065268589270833578\surefirebooter-20250605162303311_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\MO\AppData\Local\Temp\surefire10054119634433075101\surefirebooter-20250605165958361_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.7+6-LTS"/>
@@ -59,7 +59,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testAddUser_Success" classname="com.example.usermanagement.dao.UserDAOTest" time="1.325">
+  <testcase name="testAddUser_Success" classname="com.example.usermanagement.dao.UserDAOTest" time="1.367">
     <system-out><![CDATA[Test setup completed for: John Snow
 
  Testing addUser()
@@ -76,7 +76,7 @@ WARNING: If a serviceability tool is not in use, please run with -Djdk.instrumen
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
 ]]></system-err>
   </testcase>
-  <testcase name="testGetUserById_Found" classname="com.example.usermanagement.dao.UserDAOTest" time="0.01">
+  <testcase name="testGetUserById_Found" classname="com.example.usermanagement.dao.UserDAOTest" time="0.011">
     <system-out><![CDATA[Test setup completed for: John Snow
 
  Testing getUserById()
@@ -85,7 +85,7 @@ Test cleanup completed
 
 ]]></system-out>
   </testcase>
-  <testcase name="testUpdateUser_Success" classname="com.example.usermanagement.dao.UserDAOTest" time="0.007">
+  <testcase name="testUpdateUser_Success" classname="com.example.usermanagement.dao.UserDAOTest" time="0.006">
     <system-out><![CDATA[Test setup completed for: John Snow
 
  Testing updateUser()
@@ -95,7 +95,7 @@ Test cleanup completed
 
 ]]></system-out>
   </testcase>
-  <testcase name="testDeleteUser_Success" classname="com.example.usermanagement.dao.UserDAOTest" time="0.008">
+  <testcase name="testDeleteUser_Success" classname="com.example.usermanagement.dao.UserDAOTest" time="0.011">
     <system-out><![CDATA[Test setup completed for: John Snow
 
 Testing deleteUser()
@@ -105,7 +105,7 @@ Test cleanup completed
 
 ]]></system-out>
   </testcase>
-  <testcase name="testEmailExists_True" classname="com.example.usermanagement.dao.UserDAOTest" time="0.005">
+  <testcase name="testEmailExists_True" classname="com.example.usermanagement.dao.UserDAOTest" time="0.007">
     <system-out><![CDATA[Test setup completed for: John Snow
 
 Testing emailExists()
@@ -114,7 +114,7 @@ Test cleanup completed
 
 ]]></system-out>
   </testcase>
-  <testcase name="testGetAllUsers_Success" classname="com.example.usermanagement.dao.UserDAOTest" time="0.007">
+  <testcase name="testGetAllUsers_Success" classname="com.example.usermanagement.dao.UserDAOTest" time="0.008">
     <system-out><![CDATA[Test setup completed for: John Snow
 
 Testing getAllUsers()
@@ -123,7 +123,7 @@ Test cleanup completed
 
 ]]></system-out>
   </testcase>
-  <testcase name="testGetUserCount_Success" classname="com.example.usermanagement.dao.UserDAOTest" time="0.004">
+  <testcase name="testGetUserCount_Success" classname="com.example.usermanagement.dao.UserDAOTest" time="0.006">
     <system-out><![CDATA[Test setup completed for: John Snow
 
 Testing getUserCount()

@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class DatabaseConnection {
     private static final String DB_URL = System.getenv("DATABASE_URL") != null
-            ? System.getenv("DATABASE_URL")
+            ? parseUrl(System.getenv("DATABASE_URL"))
             : "jdbc:postgresql://localhost:5432/usermanagement";
     private static final String DB_USERNAME = System.getenv("PGUSER") != null
             ? System.getenv("PGUSER")
@@ -16,12 +16,30 @@ public class DatabaseConnection {
             ? System.getenv("PGPASSWORD")
             : "root";
 
+    private static String parseUrl(String railwayUrl) {
+        try {
+
+            if (railwayUrl.startsWith("postgresql://")) {
+                String withoutProtocol = railwayUrl.substring("postgresql://".length());
+                int atIndex = withoutProtocol.indexOf('@');
+                if (atIndex > 0) {
+                    String hostPortDb = withoutProtocol.substring(atIndex + 1);
+                    String fixedUrl = "jdbc:postgresql://" + hostPortDb;
+                    System.out.println("Parsed Railway URL: " + railwayUrl + " -> " + fixedUrl);
+                    return fixedUrl;
+                }
+            }
+            return railwayUrl;
+        } catch (Exception e) {
+            System.err.println("Failed to parse Railway URL: " + e.getMessage());
+            return railwayUrl;
+        }
+    }
+
     static {
         try {
             System.out.println("Loading PostgreSQL driver...");
             Class.forName("org.postgresql.Driver");
-
-            // Force register the driver
             DriverManager.registerDriver(new org.postgresql.Driver());
             System.out.println("PostgreSQL driver loaded and registered successfully!");
         } catch (Exception e) {
@@ -35,8 +53,9 @@ public class DatabaseConnection {
         try {
             System.out.println("Attempting database connection to: " + DB_URL);
             System.out.println("Using username: " + DB_USERNAME);
+
             Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
-            System.out.println("Connected to PostgreSQL database successfully!");
+            System.out.println("SUCCESS: Connected to PostgreSQL database!");
             return connection;
         } catch (SQLException e) {
             System.err.println("Failed to connect to database: " + e.getMessage());
