@@ -6,24 +6,25 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseConnection {
-
     private static final String DB_URL = System.getenv("DATABASE_URL") != null
             ? System.getenv("DATABASE_URL")
             : "jdbc:postgresql://localhost:5432/usermanagement";
-
     private static final String DB_USERNAME = System.getenv("PGUSER") != null
             ? System.getenv("PGUSER")
             : "postgres";
-
     private static final String DB_PASSWORD = System.getenv("PGPASSWORD") != null
             ? System.getenv("PGPASSWORD")
             : "root";
 
     static {
         try {
+            System.out.println("Loading PostgreSQL driver...");
             Class.forName("org.postgresql.Driver");
-            System.out.println("PostgreSQL driver loaded successfully!");
-        } catch (ClassNotFoundException e) {
+
+            // Force register the driver
+            DriverManager.registerDriver(new org.postgresql.Driver());
+            System.out.println("PostgreSQL driver loaded and registered successfully!");
+        } catch (Exception e) {
             System.err.println("CRITICAL: PostgreSQL driver not found!");
             e.printStackTrace();
             throw new RuntimeException("Failed to load PostgreSQL driver", e);
@@ -32,6 +33,8 @@ public class DatabaseConnection {
 
     public static Connection getConnection() throws SQLException {
         try {
+            System.out.println("Attempting database connection to: " + DB_URL);
+            System.out.println("Using username: " + DB_USERNAME);
             Connection connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
             System.out.println("Connected to PostgreSQL database successfully!");
             return connection;
@@ -54,12 +57,9 @@ public class DatabaseConnection {
 
         try (Connection connection = getConnection();
                 Statement statement = connection.createStatement()) {
-
             statement.execute(createUsersTable);
             System.out.println("Database initialized successfully!");
-
             insertMockData(connection);
-
         } catch (SQLException e) {
             System.err.println("Failed to initialize database: " + e.getMessage());
             e.printStackTrace();
