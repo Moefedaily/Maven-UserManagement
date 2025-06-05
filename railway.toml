@@ -2,7 +2,7 @@
 builder = "dockerfile"
 
 [deploy]
-startCommand = "catalina.sh run"
-healthcheckPath = "/"
+healthcheckPath = "/UserManagement/users"
 healthcheckTimeout = 300
 restartPolicyType = "always"
+# Remove this line: startCommand = "catalina.sh run"

@@ -14,41 +14,41 @@ The application manages users with their basic information (names, emails, phone
 
 **Backend:**
 
-- Java 21 with Jakarta EE
-- Maven project management
-- PostgreSQL database integration
-- Apache Tomcat deployment
-- Servlet-based request handling
+-   Java 21 with Jakarta EE
+-   Maven project management
+-   PostgreSQL database integration
+-   Apache Tomcat deployment
+-   Servlet-based request handling
 
 **Frontend:**
 
-- JSP templating
-- Custom CSS styling
-- Responsive web design
-- Form validation
+-   JSP templating
+-   Custom CSS styling
+-   Responsive web design
+-   Form validation
 
 **Architecture:**
 
-- MVC design pattern
-- DAO pattern for data access
-- RESTful URL structure
+-   MVC design pattern
+-   DAO pattern for data access
+-   RESTful URL structure
 
 Through this assignment, I gained experience with:
 
-- **JSP templating** - This was completely new to me, learning how to mix Java and HTML
-- **Tomcat deployment** - Understanding how web applications actually get deployed and run
-- **Servlet lifecycle** - How requests flow through the application
-- **Automated deployment** - Created a `.bat` script to streamline the build-deploy process
-- **CSS animations and modern styling**
+-   **JSP templating** - This was completely new to me, learning how to mix Java and HTML
+-   **Tomcat deployment** - Understanding how web applications actually get deployed and run
+-   **Servlet lifecycle** - How requests flow through the application
+-   **Automated deployment** - Created a `.bat` script to streamline the build-deploy process
+-   **CSS animations and modern styling**
 
 ## My approach to the design
 
 Since design isn't my strongest area, I took this as an opportunity to learn some modern CSS techniques. I researched and implemented:
 
-- CSS animations and keyframes for better user experience
-- Gradient backgrounds
-- Smooth transitions between interface states
-- Dark theme styling
+-   CSS animations and keyframes for better user experience
+-   Gradient backgrounds
+-   Smooth transitions between interface states
+-   Dark theme styling
 
 The visual design might be simple, but it demonstrates my willingness to go beyond just backend functionality and create a complete user experience.
 
@@ -56,41 +56,41 @@ The visual design might be simple, but it demonstrates my willingness to go beyo
 
 **Backend Technologies:**
 
-- Java 21 with Jakarta EE
-- Maven for project management
-- PostgreSQL database
-- Apache Tomcat server
+-   Java 21 with Jakarta EE
+-   Maven for project management
+-   PostgreSQL database
+-   Apache Tomcat server
 
 **Frontend Experience:**
 
-- JSP pages with modern HTML5
-- Custom CSS with dark theme
-- Responsive design
-- Smooth animations and interactions
+-   JSP pages with modern HTML5
+-   Custom CSS with dark theme
+-   Responsive design
+-   Smooth animations and interactions
 
 **Architecture:**
+-   MVC pattern (Model-View-Controller)
+-   Data Access Object (DAO) pattern
+-   RESTful URL structure
 
-- MVC pattern (Model-View-Controller)
-- Data Access Object (DAO) pattern
-- RESTful URL structure
 
 ## Assignment requirements
 
 ### What you'll need to run this
 
-- Java 21+
-- Apache Tomcat 10.1
-- PostgreSQL database
-- Maven 3.6+
+-   Java 21+
+-   Apache Tomcat 10.1
+-   PostgreSQL database
+-   Maven 3.6+
 
 ### Setup instructions
 
 1. **Database setup** - Create a PostgreSQL database named `usermanagement`
 2. **Configure connection** - Update database credentials in `DatabaseConnection.java` if needed
 3. **Build the project**:
-   ```bash
-   mvn clean package
-   ```
+    ```bash
+    mvn clean package
+    ```
 4. **Deploy** - Copy the generated `.war` file to Tomcat's webapps folder
 5. **Access** - Visit `http://localhost:8080/UserManagement`
 
@@ -98,12 +98,12 @@ Alternatively, use the included `deploy.bat` script for automated deployment.
 
 ## Application features
 
-- **User listing** - View all users in a responsive table
-- **Add users** - Create new user records with validation
-- **Edit users** - Update existing user information
-- **Delete users** - Remove users with confirmation
-- **Data persistence** - All data stored in PostgreSQL database
-- **Error handling** - Proper validation and error messages
+-   **User listing** - View all users in a responsive table
+-   **Add users** - Create new user records with validation
+-   **Edit users** - Update existing user information
+-   **Delete users** - Remove users with confirmation
+-   **Data persistence** - All data stored in PostgreSQL database
+-   **Error handling** - Proper validation and error messages
 
 ## Project structure
 
@@ -125,7 +125,7 @@ src/test/java/     # JUnit tests with Mockito
 
 The assignment includes comprehensive testing:
 
-- **Unit tests** for DAO methods using Mockito mocks
+-   **Unit tests** for DAO methods using Mockito mocks
 
 Run tests with: `mvn test`
 
