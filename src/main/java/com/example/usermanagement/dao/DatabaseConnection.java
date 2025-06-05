@@ -6,11 +6,19 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseConnection {
-    
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/usermanagement";
-    private static final String DB_USERNAME = "postgres";
-    private static final String DB_PASSWORD = "root"; 
-    
+
+    private static final String DB_URL = System.getenv("DATABASE_URL") != null
+            ? System.getenv("DATABASE_URL")
+            : "jdbc:postgresql://localhost:5432/usermanagement";
+
+    private static final String DB_USERNAME = System.getenv("PGUSER") != null
+            ? System.getenv("PGUSER")
+            : "postgres";
+
+    private static final String DB_PASSWORD = System.getenv("PGPASSWORD") != null
+            ? System.getenv("PGPASSWORD")
+            : "root";
+
     static {
         try {
             Class.forName("org.postgresql.Driver");
@@ -18,7 +26,6 @@ public class DatabaseConnection {
             throw new RuntimeException("Failed to load PostgreSQL driver", e);
         }
     }
-    
 
     public static Connection getConnection() throws SQLException {
         try {
@@ -30,49 +37,47 @@ public class DatabaseConnection {
             throw e;
         }
     }
-    
-    
+
     public static void initializeDatabase() {
         String createUsersTable = """
-            CREATE TABLE IF NOT EXISTS users (
-                id SERIAL PRIMARY KEY,
-                name VARCHAR(100) NOT NULL,
-                email VARCHAR(150) UNIQUE NOT NULL,
-                phone VARCHAR(20),
-                date_naissance DATE
-            )
-        """;
-        
+                    CREATE TABLE IF NOT EXISTS users (
+                        id SERIAL PRIMARY KEY,
+                        name VARCHAR(100) NOT NULL,
+                        email VARCHAR(150) UNIQUE NOT NULL,
+                        phone VARCHAR(20),
+                        date_naissance DATE
+                    )
+                """;
+
         try (Connection connection = getConnection();
-             Statement statement = connection.createStatement()) {
-            
+                Statement statement = connection.createStatement()) {
+
             statement.execute(createUsersTable);
             System.out.println("Database initialized successfully!");
-            
+
             insertMockData(connection);
-            
+
         } catch (SQLException e) {
             System.err.println("Failed to initialize database: " + e.getMessage());
             e.printStackTrace();
         }
     }
-    
-    
+
     private static void insertMockData(Connection connection) throws SQLException {
         String checkData = "SELECT COUNT(*) FROM users";
         String insertSample = """
-            INSERT INTO users (name, email, phone, date_naissance) VALUES
-            ('Doe Desire', 'doe.desire@gmail.com', '+1234567890', '2000-05-15'),
-            ('Will Smith', 'will.smith@gmail.com', '+1987654321', '1980-12-10'),
-            ('Margot ruby', 'margot.ruby@gmail.com', '+1122334455', '1992-08-20')
-            ON CONFLICT (email) DO NOTHING
-        """;
-        
+                    INSERT INTO users (name, email, phone, date_naissance) VALUES
+                    ('Doe Desire', 'doe.desire@gmail.com', '+1234567890', '2000-05-15'),
+                    ('Will Smith', 'will.smith@gmail.com', '+1987654321', '1980-12-10'),
+                    ('Margot Ruby', 'margot.ruby@gmail.com', '+1122334455', '1992-08-20')
+                    ON CONFLICT (email) DO NOTHING
+                """;
+
         try (Statement statement = connection.createStatement()) {
             var resultSet = statement.executeQuery(checkData);
             resultSet.next();
             int count = resultSet.getInt(1);
-            
+
             if (count == 0) {
                 statement.execute(insertSample);
                 System.out.println("Mock data inserted successfully!");
@@ -81,8 +86,7 @@ public class DatabaseConnection {
             }
         }
     }
-    
-   
+
     public static void testConnection() {
         try (Connection connection = getConnection()) {
             System.out.println("Database connection test successful!");
@@ -90,10 +94,6 @@ public class DatabaseConnection {
         } catch (SQLException e) {
             System.err.println("Database connection test failed!");
             System.err.println("Error: " + e.getMessage());
-            System.err.println("\nPlease check:");
-            System.err.println("1. PostgreSQL is running");
-            System.err.println("2. Database 'usermanagement' exists");
-            System.err.println("3. Username/password are correct");
         }
     }
 }
