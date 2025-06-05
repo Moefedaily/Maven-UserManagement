@@ -22,7 +22,10 @@ public class DatabaseConnection {
     static {
         try {
             Class.forName("org.postgresql.Driver");
+            System.out.println("PostgreSQL driver loaded successfully!");
         } catch (ClassNotFoundException e) {
+            System.err.println("CRITICAL: PostgreSQL driver not found!");
+            e.printStackTrace();
             throw new RuntimeException("Failed to load PostgreSQL driver", e);
         }
     }
