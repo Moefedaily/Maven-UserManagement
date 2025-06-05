@@ -69,10 +69,10 @@ The visual design might be simple, but it demonstrates my willingness to go beyo
 -   Smooth animations and interactions
 
 **Architecture:**
-
 -   MVC pattern (Model-View-Controller)
 -   Data Access Object (DAO) pattern
 -   RESTful URL structure
+
 
 ## Assignment requirements
 
