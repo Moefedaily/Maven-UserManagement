@@ -241,7 +241,6 @@ public class UserServlet extends HttpServlet {
         String idParam = request.getParameter("id");
         System.out.println("DEBUG: Delete request - ID parameter: '" + idParam + "'");
 
-        // Validate parameter
         if (idParam == null || idParam.trim().isEmpty()) {
             System.out.println("ERROR: Empty or null ID parameter");
             request.setAttribute("errorMessage", "Invalid user ID - cannot delete user.");
