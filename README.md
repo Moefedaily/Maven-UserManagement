@@ -2,6 +2,10 @@
 
 This is my Java web development assignment - a user management application built to demonstrate understanding of Java and web development.
 
+## Live Demo
+
+**Application URL:** https://maven-usermanagement-production.up.railway.app/UserManagement/
+
 ## Assignment overview
 
 This project was created as part of my Java web development coursework. The assignment required building a full-stack web application that manages user data with complete CRUD operations, database integration, and a web interface.
@@ -40,6 +44,7 @@ Through this assignment, I gained experience with:
 -   **Servlet lifecycle** - How requests flow through the application
 -   **Automated deployment** - Created a `.bat` script to streamline the build-deploy process
 -   **CSS animations and modern styling**
+-   **Railway platform** - Figured out how to get this thing running in the cloud
 
 ## My approach to the design
 
@@ -51,6 +56,14 @@ Since design isn't my strongest area, I took this as an opportunity to learn som
 -   Dark theme styling
 
 The visual design might be simple, but it demonstrates my willingness to go beyond just backend functionality and create a complete user experience.
+
+## Some challenges I faced
+
+Getting this to work on Railway was... interesting. The main issue was that Railway gives you database URLs in one format (`postgresql://user:pass@host:port/db`) but the PostgreSQL driver expects a different format (`jdbc:postgresql://host:port/db`).
+
+So I had to write a simple URL parser to fix this. Also had some fun with classloader issues in the container environment. Nothing too crazy, just had to figure out how to make the PostgreSQL driver load properly.
+
+In the end, it was a good learning experience about how things work differently between local development and cloud environments.
 
 ## What's under the hood
 
@@ -119,6 +132,10 @@ src/main/webapp/
 └── index.jsp      # Application entry point
 
 src/test/java/     # JUnit tests with Mockito
+
+Dockerfile         # Container configuration
+railway.toml       # Railway platform settings
+deploy.bat         # Local deployment script
 ```
 
 ## Testing approach
