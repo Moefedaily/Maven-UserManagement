@@ -72,7 +72,6 @@ The visual design might be simple, but it demonstrates my willingness to go beyo
 
 - MVC pattern (Model-View-Controller)
 - Data Access Object (DAO) pattern
-- Clean separation of concerns
 - RESTful URL structure
 
 ## Assignment requirements
