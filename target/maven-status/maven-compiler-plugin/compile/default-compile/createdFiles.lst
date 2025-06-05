@@ -1,3 +1,5 @@
-com\example\usermanagement\dao\DatabaseConnection.class
 com\example\usermanagement\model\User.class
 com\example\usermanagement\dao\DatabaseTest.class
+com\example\usermanagement\dao\DatabaseConnection.class
+com\example\usermanagement\dao\UserDAO.class
+com\example\usermanagement\controller\UserServlet.class
