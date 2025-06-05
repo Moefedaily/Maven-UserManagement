@@ -1,5 +1,6 @@
 package com.example.usermanagement.controller;
 
+import com.example.usermanagement.dao.DatabaseConnection;
 import com.example.usermanagement.dao.UserDAO;
 import com.example.usermanagement.model.User;
 
@@ -24,6 +25,7 @@ public class UserServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         userDAO = new UserDAO();
+        DatabaseConnection.initializeDatabase();
         System.out.println("UserServlet initialized successfully!");
     }
 
