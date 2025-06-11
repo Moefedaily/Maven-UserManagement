@@ -1,6 +1,6 @@
 # User Management System
 
-This is my Java web development assignment - a user management application built to demonstrate understanding of Java and web development.
+This is my Java web development assignment - a user management application built to demonstrate understanding of Java.
 
 ## Live Demo
 
